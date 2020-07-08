@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/trebsirk/pytest-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/trebsirk/pytest-demo)
+
 # pytest-demo
 `
 
