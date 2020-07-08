@@ -18,4 +18,4 @@ def mult(alice: int, bob: int) -> int:
     :param bob: int
     :return: * of alice and bob
     """
-    return alice // bob
+    return alice * bob
