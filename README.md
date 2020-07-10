@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/trebsirk/pytest-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/trebsirk/pytest-demo)
+[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/trebsirk/pytest-demo/issues)
 
 # pytest-demo
 `
