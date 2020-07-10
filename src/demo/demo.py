@@ -19,3 +19,35 @@ def mult(alice: int, bob: int) -> int:
     :return: * of alice and bob
     """
     return alice * bob
+
+def coin_change(amount, coins):
+    """
+        this retuns the least number of coins to make change from amount
+        :param amount: int
+        :param coins: list[int]
+        :return: n, number of coins
+        """
+    n_coins = 0
+    while amount > 0 and coins != []:
+        if amount - coins[0] >= 0:
+            amount -= coins[0]
+            n_coins += 1
+        else:
+            coins = coins[1:]
+    return n_coins
+
+def coin_change_2(amount, coins):
+    """
+    this retuns the least number of coins to make change from amount
+    :param amount: int
+    :param coins: list[int]
+    :return: n, number of coins
+    """
+    n_coins, i = 0, 0
+    while amount > 0 and i < len(coins):
+        if amount - coins[i] >= 0:
+            amount -= coins[i]
+            n_coins += 1
+        else:
+            i += 1
+    return n_coins

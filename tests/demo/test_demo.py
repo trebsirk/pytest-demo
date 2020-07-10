@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from src.demo.demo import add, mult
+from src.demo.demo import add, mult, coin_change, coin_change_2
 
 @pytest.fixture
 def dummy_df():
@@ -22,3 +22,24 @@ def test_add(dummy_list_of_lists):
 def test_mult(dummy_list_of_lists):
     r = list(map(lambda x: mult(*x), dummy_list_of_lists))
     assert r == [2, 12, 30]
+
+def test_coin_change():
+    coins = [25,10,5,1]
+    amount = 10
+    assert coin_change(amount, coins) == 1
+
+def test_coin_change2():
+    coins = [25,10,5,1]
+    amount = 9
+    assert coin_change(amount, coins) == 5
+
+
+def test_coin_change3():
+    coins = [25,10,5,1]
+    amount = 10
+    assert coin_change_2(amount, coins) == 1
+
+def test_coin_change4():
+    coins = [25,10,5,1]
+    amount = 9
+    assert coin_change_2(amount, coins) == 5
