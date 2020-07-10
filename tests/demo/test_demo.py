@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from src.demo.demo import add, mult, coin_change, coin_change_2
+from src.demo.demo import add, mult, coin_change, coin_change_2,coin_change_3
 
 @pytest.fixture
 def dummy_df():
@@ -23,23 +23,43 @@ def test_mult(dummy_list_of_lists):
     r = list(map(lambda x: mult(*x), dummy_list_of_lists))
     assert r == [2, 12, 30]
 
-def test_coin_change():
+def test_coin_change_a():
     coins = [25,10,5,1]
     amount = 10
     assert coin_change(amount, coins) == 1
 
-def test_coin_change2():
+def test_coin_change_b():
     coins = [25,10,5,1]
     amount = 9
     assert coin_change(amount, coins) == 5
 
 
-def test_coin_change3():
+def test_coin_change_2a():
     coins = [25,10,5,1]
     amount = 10
     assert coin_change_2(amount, coins) == 1
 
-def test_coin_change4():
+def test_coin_change_2b():
     coins = [25,10,5,1]
     amount = 9
     assert coin_change_2(amount, coins) == 5
+
+def test_coin_change_2c():
+    coins = [25,10]
+    amount = 11
+    assert coin_change_2(amount, coins) == -1
+
+def test_coin_change_3a():
+    coins = [25,10,5,1]
+    amount = 10
+    assert coin_change_3(amount, coins) == 1
+
+def test_coin_change_3b():
+    coins = [25,10,5,1]
+    amount = 9
+    assert coin_change_3(amount, coins) == 5
+
+def test_coin_change_3c():
+    coins = [25,10,5]
+    amount = 9
+    assert coin_change_3(amount, coins) == -1

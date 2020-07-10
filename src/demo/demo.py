@@ -34,6 +34,8 @@ def coin_change(amount, coins):
             n_coins += 1
         else:
             coins = coins[1:]
+    if amount > 0:
+        return -1
     return n_coins
 
 def coin_change_2(amount, coins):
@@ -50,4 +52,24 @@ def coin_change_2(amount, coins):
             n_coins += 1
         else:
             i += 1
+    if amount > 0:
+        return -1
+    return n_coins
+
+def coin_change_3(amount, coins):
+    """
+    this retuns the least number of coins to make change from amount
+    :param amount: int
+    :param coins: list[int]
+    :return: n, number of coins
+    """
+    n_coins, i = 0, 0
+    while amount > 0 and i < len(coins):
+        n_from_coin = amount // coins[i]
+        if n_from_coin > 0:
+            amount -= (coins[i]*n_from_coin)
+            n_coins += n_from_coin
+        i += 1
+    if amount > 0:
+        return -1
     return n_coins
